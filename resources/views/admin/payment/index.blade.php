@@ -18,7 +18,7 @@
       </div>
       	<div class="row">
         	<div class="col-lg-12 grid-margin stretch-card">
-      			<a href="{{ route('list.search') }}" class="btn btn-gradient-success btn-rounded btn-fw">Search</a>
+      			<a href="{{ route('payment.search') }}" class="btn btn-gradient-success btn-rounded btn-fw">Search</a>
         	</div>
     	</div>
       <div class="row">

@@ -22,7 +22,7 @@
     </li>
      <li class="nav-item">
       <a class="nav-link" href="{{ route('list.index') }}">
-        <span class="menu-title">Cashiering</span>
+        <span class="menu-title">Payment</span>
         <i class="mdi mdi-library-books menu-icon"></i>
       </a>
     </li>
@@ -34,7 +34,7 @@
         </a>
         <div class="collapse" id="general-pages" style="">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="{{ route('fines.total') }}"> List of Students </a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('attendance.log') }}">View Attendances</a></li>
           </ul>
         </div>
     </li>

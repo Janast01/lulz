@@ -11,7 +11,7 @@
 		<nav aria-label="breadcrumb">
 			<ul class="breadcrumb">
 				<li class="breadcrumb-item active" aria-current="page">
-				  	<span></span>Total Fines <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
+				  	<span></span> View Attendances <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
 				</li>
 			</ul>
 		</nav>
@@ -25,26 +25,23 @@
             <table class="table table-hover">
               <thead>
                 <tr>
+                  <th>Event Name</th>
+                  <th>Status</th>
+                  <th>Id number</th>
                   <th>Student Name</th>
-                  <th>Course</th>
-                  <th>Section/Year</th>
-                  <th>Total</th>
-                  <th>Action</th>
+                  <th>Added By</th>
                 </tr>
               </thead>
               <tbody>
+                @foreach($attendances as $attendance)
                 <tr>
-                  <td>Jomaico Abusca</td>
-                  <td>BSIT</td>
-                  <td>3-B</td>
-                  <td><label class="badge badge-danger">10,000</label></td>
+                  <td>{{ $attendance['event_name'] }}</td>
+                  <td>{{ $attendance['status'] }}</td>
+                  <td>{{ $attendance['id_number'] }}</td>
+                  <td>{{ $attendance['student_name'] }}</td>
+                  <td>{{ $attendance['added_by'] }}</td>
                 </tr>
-                <tr>
-                  <td>Bea Morales</td>
-                  <td>BSIT</td>
-                  <td>3-B</td>
-                  <td><label class="badge badge-danger">35,000</label></td>
-                </tr>
+                @endforeach
 
                 
               </tbody>

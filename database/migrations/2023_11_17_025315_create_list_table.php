@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('list', function (Blueprint $table)->before_failed_jobs {
+        Schema::create('list', function (Blueprint $table) {
             $table->id();
             $table->string('FirstName');
             $table->string('LastName');

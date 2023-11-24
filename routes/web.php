@@ -31,16 +31,11 @@ Route::prefix('dashboard')->middleware(['auth'])->group(function(){
 	Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'dashboard'])->name('dashboard');
 });
 
-Route::prefix('list')->middleware(['auth'])->group(function(){
-	Route::get('/', [App\Http\Controllers\Admin\ListController::class, 'index'])->name('list.index');
-	Route::get('/search', [App\Http\Controllers\Admin\ListController::class, 'list'])->name('list.search');
+Route::prefix('payment')->middleware(['auth'])->group(function(){
+	Route::get('/', [App\Http\Controllers\Admin\ListController::class, 'index'])->name('payment.index');
+	Route::get('/search', [App\Http\Controllers\Admin\ListController::class, 'payment'])->name('payment.search');
 });
 
-Route::prefix('fines')->middleware(['auth'])->group(function(){
-	Route::get('/total', [App\Http\Controllers\Admin\FinesController::class, 'fines'])->name('fines.total');
-});
-
-Route::prefix('list')->middleware(['auth'])->group(function(){
-    Route::get('/store', [App\Http\Controllers\Admin\ListController::class, 'index'])->name('list.index');
-    Route::get('/store', [App\Http\Controllers\Admin\ListController::class, 'list'])->name('list.store');
+Route::prefix('attendances')->middleware(['auth'])->group(function(){
+	Route::get('/logs', [App\Http\Controllers\Admin\AttendanceController::class, 'attendance'])->name('attendance.log');
 });
