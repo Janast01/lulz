@@ -31,11 +31,16 @@ Route::prefix('dashboard')->middleware(['auth'])->group(function(){
 	Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'dashboard'])->name('dashboard');
 });
 
-Route::prefix('books')->middleware(['auth'])->group(function(){
-	Route::get('/', [App\Http\Controllers\Admin\BooksController::class, 'index'])->name('books.index');
-	Route::get('/create', [App\Http\Controllers\Admin\BooksController::class, 'create'])->name('books.create');
+Route::prefix('list')->middleware(['auth'])->group(function(){
+	Route::get('/', [App\Http\Controllers\Admin\ListController::class, 'index'])->name('list.index');
+	Route::get('/search', [App\Http\Controllers\Admin\ListController::class, 'list'])->name('list.search');
 });
 
 Route::prefix('fines')->middleware(['auth'])->group(function(){
 	Route::get('/total', [App\Http\Controllers\Admin\FinesController::class, 'fines'])->name('fines.total');
+});
+
+Route::prefix('list')->middleware(['auth'])->group(function(){
+    Route::get('/store', [App\Http\Controllers\Admin\ListController::class, 'index'])->name('list.index');
+    Route::get('/store', [App\Http\Controllers\Admin\ListController::class, 'list'])->name('list.store');
 });

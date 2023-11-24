@@ -18,7 +18,7 @@
       </div>
       	<div class="row">
         	<div class="col-lg-12 grid-margin stretch-card">
-      			<a href="{{ route('books.create') }}" class="btn btn-gradient-success btn-rounded btn-fw">Add Book</a>
+      			<a href="{{ route('list.search') }}" class="btn btn-gradient-success btn-rounded btn-fw">Search</a>
         	</div>
     	</div>
       <div class="row">
@@ -26,8 +26,8 @@
         	<div class="card">
           <div class="card-body">
             <h4 class="card-title">Hoverable Table</h4>
-            <p class="card-description"> Add class <code>.table-hover</code>
-            </p>
+            <!-- <p class="card-description"> Add class <code>.table-hover</code>
+            </p> -->
             <table class="table table-hover">
               <thead>
                 <tr>

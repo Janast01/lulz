@@ -29,6 +29,7 @@
                   <th>Course</th>
                   <th>Section/Year</th>
                   <th>Total</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -44,6 +45,7 @@
                   <td>3-B</td>
                   <td><label class="badge badge-danger">35,000</label></td>
                 </tr>
+
                 
               </tbody>
             </table>

@@ -20,9 +20,9 @@
         <div class="col-lg-12 grid-margin stretch-card">
         	 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Basic form elements</h4>
+                    <h4 class="card-title">Add Fines</h4>
                     <p class="card-description"> Basic form elements </p>
-                    <form class="forms-sample">
+                    <form class="forms-sample" method="POST" action="{{ route('list.store') }}">>
                       <div class="form-group">
                         <label for="exampleInputName1">Name</label>
                         <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">

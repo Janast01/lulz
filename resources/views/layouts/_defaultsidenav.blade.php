@@ -8,8 +8,8 @@
           <!--change to offline or busy as needed-->
         </div>
         <div class="nav-profile-text d-flex flex-column">
-          <span class="font-weight-bold mb-2">David Grey. H</span>
-          <span class="text-secondary text-small">Project Manager</span>
+          <span class="font-weight-bold mb-2">Admin</span>
+          <span class="text-secondary text-small">SSC/BITS</span>
         </div>
         <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
       </a>
@@ -21,20 +21,20 @@
       </a>
     </li>
      <li class="nav-item">
-      <a class="nav-link" href="{{ route('books.index') }}">
-        <span class="menu-title">Books</span>
+      <a class="nav-link" href="{{ route('list.index') }}">
+        <span class="menu-title">Cashiering</span>
         <i class="mdi mdi-library-books menu-icon"></i>
       </a>
     </li>
     <li class="nav-item">
         <a class="nav-link collapsed" data-bs-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages">
-          <span class="menu-title">Attendance</span>
+          <span class="menu-title">Attendances</span>
           <i class="menu-arrow"></i>
           <i class="mdi mdi-medical-bag menu-icon"></i>
         </a>
         <div class="collapse" id="general-pages" style="">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="{{ route('fines.total') }}"> Total Fines </a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('fines.total') }}"> List of Students </a></li>
           </ul>
         </div>
     </li>
