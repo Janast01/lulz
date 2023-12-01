@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 class AcademicyearController extends Controller
 {
-    public function acadyear()
+    public function index()
     {
-    	return view('admin.payment.acadyear',[
+    	return view('admin.academicyear.acadyear',[
     		'title' => 'School Year | Admin'
     	]);
     }

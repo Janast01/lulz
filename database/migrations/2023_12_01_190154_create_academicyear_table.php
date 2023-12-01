@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('list', function (Blueprint $table) {
+        Schema::create('academicyear', function (Blueprint $table) {
             $table->id();
-            $table->string('course');
-            $table->string('year_level');
-            $table->string('semester');
+            $table->string('acadyear');
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('list');
+        Schema::dropIfExists('academicyear');
     }
 };

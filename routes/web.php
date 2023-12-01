@@ -38,6 +38,7 @@ Route::prefix('payment')->middleware(['auth'])->group(function(){
 Route::prefix('attendances')->middleware(['auth'])->group(function(){
 	Route::get('/logs', [App\Http\Controllers\Admin\AttendanceController::class, 'attendance'])->name('attendance.log');
 });
-Route::prefix('payment')->middleware(['auth'])->group(function(){
-    Route::get('/acadyear', [App\Http\Controllers\Admin\AcademicyearController::class, 'acadyear'])->name('payment.acadyear');
+Route::prefix('academicyear')->middleware(['auth'])->group(function(){
+    Route::get('/', [App\Http\Controllers\Admin\AcademicyearController::class, 'index'])->name('academicyear.index');
+    Route::get('/create', [App\Http\Controllers\Admin\AcademicyearController::class, 'create'])->name('academicyear.create');
 });

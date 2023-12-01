@@ -33,7 +33,7 @@
         </div>
     </li>
      <li class="nav-item">
-         <a class="nav-link" href="{{ route('payment.acadyear') }}">
+         <a class="nav-link" href="{{ route('academicyear.index') }}">
            <span class="menu-title">School Year</span>
            <i class="mdi mdi-library-books menu-icon"></i>
         </a>
