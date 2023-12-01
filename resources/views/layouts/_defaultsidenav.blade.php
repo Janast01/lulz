@@ -2,16 +2,10 @@
   <ul class="nav">
     <li class="nav-item nav-profile">
       <a href="#" class="nav-link">
-        <div class="nav-profile-image">
-          <img src="assets/images/faces/face1.jpg" alt="profile">
-          <span class="login-status online"></span>
-          <!--change to offline or busy as needed-->
-        </div>
         <div class="nav-profile-text d-flex flex-column">
           <span class="font-weight-bold mb-2">Admin</span>
           <span class="text-secondary text-small">SSC/BITS</span>
         </div>
-        <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
       </a>
     </li>
     <li class="nav-item">
@@ -21,7 +15,7 @@
       </a>
     </li>
      <li class="nav-item">
-      <a class="nav-link" href="{{ route('list.index') }}">
+      <a class="nav-link" href="{{ route('payment.search') }}">
         <span class="menu-title">Payment</span>
         <i class="mdi mdi-library-books menu-icon"></i>
       </a>
@@ -37,6 +31,12 @@
             <li class="nav-item"> <a class="nav-link" href="{{ route('attendance.log') }}">View Attendances</a></li>
           </ul>
         </div>
+    </li>
+     <li class="nav-item">
+         <a class="nav-link" href="{{ route('payment.acadyear') }}">
+           <span class="menu-title">School Year</span>
+           <i class="mdi mdi-library-books menu-icon"></i>
+        </a>
     </li>
   </ul>
 </nav>

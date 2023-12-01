@@ -20,7 +20,7 @@ use App\Http\Controllers\Admin\DashboardController;
  });
 
 Route::controller(LoginRegisterController::class)->group(function() {
-    Route::get('/register', 'register')->name('register');
+    // Route::get('/register', 'register')->name('register');
     Route::post('/store', 'store')->name('store');
     Route::get('/login', 'login')->name('login');
     Route::post('/authenticate', 'authenticate')->name('authenticate');
@@ -32,10 +32,12 @@ Route::prefix('dashboard')->middleware(['auth'])->group(function(){
 });
 
 Route::prefix('payment')->middleware(['auth'])->group(function(){
-	Route::get('/', [App\Http\Controllers\Admin\ListController::class, 'index'])->name('payment.index');
-	Route::get('/search', [App\Http\Controllers\Admin\ListController::class, 'payment'])->name('payment.search');
+	Route::get('/search', [App\Http\Controllers\Admin\PaymentController::class, 'payment'])->name('payment.search');
 });
 
 Route::prefix('attendances')->middleware(['auth'])->group(function(){
 	Route::get('/logs', [App\Http\Controllers\Admin\AttendanceController::class, 'attendance'])->name('attendance.log');
+});
+Route::prefix('payment')->middleware(['auth'])->group(function(){
+    Route::get('/acadyear', [App\Http\Controllers\Admin\AcademicyearController::class, 'acadyear'])->name('payment.acadyear');
 });

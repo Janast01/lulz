@@ -25,13 +25,13 @@ class LoginRegisterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function register()
-    {
-        return view('auth.register',[
-            'title' => "Registration",
-            'pagename' => "Registration Form"
-        ]);
-    }
+    // public function register()
+    // {
+    //     return view('auth.register',[
+    //         'title' => "Registration",
+    //         'pagename' => "Registration Form"
+    //     ]);
+    // }
 
     /**
      * Store a new user.
@@ -44,7 +44,7 @@ class LoginRegisterController extends Controller
         $request->validate([
             'name' => 'required|string|max:250',
             'email' => 'required|email|max:250|unique:users',
-            'password' => 'required|min:8|confirmed'
+            'password' => 'required|max:20|confirmed'
         ]);
 
         User::create([

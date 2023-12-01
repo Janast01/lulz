@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('list', function (Blueprint $table) {
             $table->id();
-            $table->string('FirstName');
-            $table->string('LastName');
-            $table->string('gender');
-            $table->string('address');
+            $table->string('course');
+            $table->string('year_level');
+            $table->string('semester');
             $table->timestamps();
         });
     }
