@@ -21,22 +21,22 @@
       </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages">
-          <span class="menu-title">Attendances</span>
+      <a class="nav-link" href="{{ route('attendance.log') }}">
+        <span class="menu-title">View Attendances</span>
+        <i class="mdi mdi-library-books menu-icon"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-toggle="collapse" href="#preferences" aria-expanded="false" aria-controls="preferences">
+          <span class="menu-title">Preferences</span>
           <i class="menu-arrow"></i>
           <i class="mdi mdi-medical-bag menu-icon"></i>
         </a>
-        <div class="collapse" id="general-pages" style="">
+        <div class="collapse" id="preferences" style="">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="{{ route('attendance.log') }}">View Attendances</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('acadyear.index') }}">School Year</a></li>
           </ul>
         </div>
-    </li>
-     <li class="nav-item">
-         <a class="nav-link" href="{{ route('academicyear.index') }}">
-           <span class="menu-title">School Year</span>
-           <i class="mdi mdi-library-books menu-icon"></i>
-        </a>
     </li>
   </ul>
 </nav>

@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('academicyear', function (Blueprint $table) {
+        Schema::create('academicyears', function (Blueprint $table) {
             $table->id();
-            $table->string('acadyear');
+            $table->string('academicyear');
             $table->timestamps();
         });
     }
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('academicyear');
+        Schema::dropIfExists('academicyears');
     }
 };

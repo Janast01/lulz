@@ -5,12 +5,14 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class AcademicyearController extends Controller
+class AcademicYearController extends Controller
 {
-    public function index()
+	public function index()
     {
-    	return view('admin.academicyear.acadyear',[
-    		'title' => 'School Year | Admin'
-    	]);
+        return view('admin.acadyear.index',[
+			'pagetitle' => 'Academic Year',
+			'title' => 'Admin Dashboard'
+		]);
     }
+    
 }

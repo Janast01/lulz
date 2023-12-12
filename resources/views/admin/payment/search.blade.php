@@ -35,11 +35,11 @@
                       <div class="form-group">
                         <label>S.Y.</label>
                         <select class="form-control text-dark" id="s.y." style="padding: 17px">
-                          <option>2019-2020</option>
-                          <option>2020-2021</option>
-                          <option>2021-2022</option>
-                          <option>2022-2023</option>
-                          <option>2023-2024</option>
+                            @if($acadyears = App\Models\Academicyear::get())
+                                @foreach($acadyears as $acadyear)
+                                    <option>{{ $acadyear->academicyear }}</option>
+                                @endforeach
+                            @endif
                         </select>
                       </div>
                       <div>

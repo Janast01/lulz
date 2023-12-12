@@ -10,7 +10,6 @@ class AttendanceController extends Controller
 {
     public function attendance() {
 		$auth = 'Janel_Janast_Astillero2023';
-
 		// API endpoint
 		$apiEndpoint = 'https://ssc.slsubc.com/api/attendance/log';
 
@@ -37,7 +36,7 @@ class AttendanceController extends Controller
 
 		// Do something with the response data
 		// return $responseBody;
-
+		// return $data;
 	    return view('admin.attendance.view',[
 	        'title' => 'View',
 	        'attendances' => $data

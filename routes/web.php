@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\Admin\DashboardController;
-
+use App\Http\Controllers\Admin\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,18 +27,17 @@ Route::controller(LoginRegisterController::class)->group(function() {
     Route::post('/logout', 'logout')->name('logout');
 });
 
-Route::prefix('dashboard')->middleware(['auth'])->group(function(){
-	Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'dashboard'])->name('dashboard');
+Route::prefix('admin')->middleware(['auth'])->group(function(){
+    // dashboard
+	Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'dashboard'])->name('dashboard');
+
+    // Payment
+    Route::get('payment/search', [App\Http\Controllers\Admin\PaymentController::class, 'payment'])->name('payment.search');
+
+    // Attendances
+    Route::get('/logs', [App\Http\Controllers\Admin\AttendanceController::class, 'attendance'])->name('attendance.log');
+
+    // Academic Year
+    Route::get('/academicyear', [App\Http\Controllers\Admin\AcademicYearController::class, 'index'])->name('acadyear.index');
 });
 
-Route::prefix('payment')->middleware(['auth'])->group(function(){
-	Route::get('/search', [App\Http\Controllers\Admin\PaymentController::class, 'payment'])->name('payment.search');
-});
-
-Route::prefix('attendances')->middleware(['auth'])->group(function(){
-	Route::get('/logs', [App\Http\Controllers\Admin\AttendanceController::class, 'attendance'])->name('attendance.log');
-});
-Route::prefix('academicyear')->middleware(['auth'])->group(function(){
-    Route::get('/', [App\Http\Controllers\Admin\AcademicyearController::class, 'index'])->name('academicyear.index');
-    Route::get('/create', [App\Http\Controllers\Admin\AcademicyearController::class, 'create'])->name('academicyear.create');
-});
