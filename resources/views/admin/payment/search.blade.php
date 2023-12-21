@@ -87,7 +87,7 @@
                                     <td>{{ $value['first_name'] }}</td>
                                     <td>{{ $value['last_name'] }}</td>
                                     <td>{{ $value['course']['course'] }}</td>
-                                    <td><a class="btn btn-primary" href="{{ route('payment_billings',['id'=>$value['id'], 'academicyear'=>$value['academicyear'],'semester'=> $value['semester'] ]) }}">View</a></td>
+                                    <td><a class="btn btn-primary" href="{{ route('payment_billings',['id'=> $value['id'], 'academicyear'=>$value['academicyear'],'semester'=> $value['semester'] ]) }}">View</a></td>
                                 </tr>
                             @endforeach
                         @endif

@@ -34,7 +34,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function(){
     // Payment
     Route::get('payment', [App\Http\Controllers\Admin\PaymentController::class, 'payment'])->name('payment');
     Route::post('payment/search', [App\Http\Controllers\Admin\PaymentController::class, 'payment_search'])->name('payment.search');
-    Route::get('payment/billings', [App\Http\Controllers\Admin\PaymentController::class, 'payment'])->name('payment_billings');
+    Route::get('payment/billings', [App\Http\Controllers\Admin\PaymentController::class, 'payment_billings'])->name('payment_billings');
 
     // Attendances
     Route::get('/logs', [App\Http\Controllers\Admin\AttendanceController::class, 'attendance'])->name('attendance.log');

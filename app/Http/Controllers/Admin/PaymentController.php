@@ -83,7 +83,7 @@ class PaymentController extends Controller
         // Decode the JSON response
         $data = json_decode($responseBody, true);
 
-        return view('admin.payment.search',[
+        return view('admin.payment.billings',[
             'pagetitle' => 'Search',
             'title' => 'Payment | Admin', 
             'data' => $data
