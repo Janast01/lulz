@@ -4,7 +4,7 @@
 	<div class="content-wrapper">
         <div class="page-header">
             <h3 class="page-title">
-                <span class="page-title-icon bg-gradient-primary text-white me-2">
+                <span class="page-title-icon bg-gradient- text-white me-2">
                     <i class="mdi mdi-home"></i>
                 </span> {{ $pagetitle }}
             </h3>
@@ -24,20 +24,28 @@
                                         <div class="row">
                                             <div class="col-sm-3">
                                                 <div class="form-group">
-                                                    <label class="text-dark">ID Number: <b>{{ $data['student']['idnumber'] }}</b></label>
-                                                    <label>Full Name: <b>{{ $data['student']['last_name'] }}, {{ $data['student']['first_name'] }}</b></label>
+                                                    <img style="width: 100%;" src="https://ssc.slsubc.com/storage/{{ $data['student']['avatar'] }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-5">
                                                 <div class="form-group">
+                                                    <label>ID Number: <b>{{ $data['student']['idnumber'] }}</b></label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Full Name: <b>{{ $data['student']['last_name'] }}, {{ $data['student']['first_name'] }}</b></label>
+                                                </div>
+                                                <div class="form-group">    
                                                     <label>Course: <b>{{ $data['student']['course']['course'] }}</b></label>
+                                                </div>  
+                                                <div class="form-group">    
                                                     <label>Year: <b>{{ $data['student']['year'] }}</b></label>
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-4">
+
+                                                <div class="form-group">   
+                                                    <label>Section: <b>{{ $data['student']['section'] }}</b></label>
+                                                </div>
                                                 <div class="form-group">
-                                                    <label class="text-dark">Section: <b>{{ $data['student']['section'] }}</b></label><br>
-                                                    <label class="text-dark">Gender: <b>{{ $data['student']['gender'] }}</b></label>
+                                                    <label>Gender: <b>{{ $data['student']['gender'] }}</b></label>
                                                 </div>
                                             </div>
                                         </div>
@@ -62,7 +70,13 @@
                                     <tbody>
                                         @foreach($data['events'] as $event)
                                             <tr>
-                                                <td>{{ $event['name'] }}</td>
+                                                <td>
+                                                    {{ $event['name'] }}
+                                                    <br><div style="width: 30%;">
+                                                     {{ \Carbon\Carbon::parse($event['from_date_and_time'])->format('F j g:ia')}} - {{ \Carbon\Carbon::parse($event['to_date_and_time'])->format('F j g:ia')}}
+                                                    </div>
+                                                </td>
+                                                
                                                 <td>
                                                     @foreach($data['attendances'] as $attendance)
                                                         @if($attendance['event_id'] == $event['id'] && $attendance['status'] == 'login')
@@ -77,7 +91,17 @@
                                                         @endif
                                                     @endforeach
                                                 </td>
-                                                <td>{{ $event['total_hours'] }}</td>
+                                                <td>
+                                                    @php
+                                                        $attendance = collect($data['attendances'])->firstWhere('event_id', $event['id']);
+                                                    @endphp
+                                                    @if ($attendance)
+                                                        <p>0</p>
+                                                    @else
+                                                        <p>{{ $event['total_hours']}}</p>
+                                                    @endif
+                                                    
+                                                </td>
                                             </tr>
                                         @endforeach
                                     </tbody>
