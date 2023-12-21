@@ -15,7 +15,7 @@
       </a>
     </li>
      <li class="nav-item">
-      <a class="nav-link" href="{{ route('payment.search') }}">
+      <a class="nav-link" href="{{ route('payment') }}">
         <span class="menu-title">Payment</span>
         <i class="mdi mdi-library-books menu-icon"></i>
       </a>

@@ -32,7 +32,9 @@ Route::prefix('admin')->middleware(['auth'])->group(function(){
 	Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'dashboard'])->name('dashboard');
 
     // Payment
-    Route::get('payment/search', [App\Http\Controllers\Admin\PaymentController::class, 'payment'])->name('payment.search');
+    Route::get('payment', [App\Http\Controllers\Admin\PaymentController::class, 'payment'])->name('payment');
+    Route::post('payment/search', [App\Http\Controllers\Admin\PaymentController::class, 'payment_search'])->name('payment.search');
+    Route::get('payment/billings', [App\Http\Controllers\Admin\PaymentController::class, 'payment'])->name('payment_billings');
 
     // Attendances
     Route::get('/logs', [App\Http\Controllers\Admin\AttendanceController::class, 'attendance'])->name('attendance.log');
