@@ -41,5 +41,11 @@ class AttendanceController extends Controller
 	        'title' => 'View',
 	        'attendances' => $data
 	    ]);
+
+	      $data = json_decode($responseBody, true);
+        return view('admin.attendance.edit',[
+            'pagetitle' => 'Edit',
+            'title' => 'Student | Edit'
+        ]);
     }
 }

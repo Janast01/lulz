@@ -55,6 +55,7 @@ class PaymentController extends Controller
     }
     public function payment_billings(Request $request)
     {
+
         $auth = 'Janel_Janast_Astillero2023';
         // API endpoint
         $apiEndpoint = 'https://ssc.slsubc.com/api/attendance/pay';
@@ -82,7 +83,7 @@ class PaymentController extends Controller
 
         // Decode the JSON response
         $data = json_decode($responseBody, true);
-
+        // return $data;
         return view('admin.payment.billings',[
             'pagetitle' => 'Search',
             'title' => 'Payment | Admin', 

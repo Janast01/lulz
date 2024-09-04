@@ -13,6 +13,7 @@
           </ul>
         </nav>
       </div>
+    <h3 style="font-size: 24px; color: white; font-family: Arial, sans-serif; text-align: center;">Search</h3>
       <div class="row">
         <div class="col-lg-12 grid-margin stretch-card">
         	<div class="card">
@@ -69,6 +70,7 @@
        <div class="row">
         <div class="col-lg-12">
             <div class="card">
+                @if(isset($data))
                 <table class="table">
                     <thead>
                         <tr>
@@ -80,7 +82,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if(isset($data))
+                        
                             @foreach($data as $value)
                                 <tr>
                                     <td>{{ $value['idnumber'] }}</td>
@@ -88,11 +90,18 @@
                                     <td>{{ $value['last_name'] }}</td>
                                     <td>{{ $value['course']['course'] }}</td>
                                     <td><a class="btn btn-primary" href="{{ route('payment_billings',['id'=> $value['id'], 'academicyear'=>$value['academicyear'],'semester'=> $value['semester'] ]) }}">View</a></td>
+                                    <td>
+                                        <form method="POST" action="{{ route('student_edit') }}">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{ $value['id'] }}">
+                                            <button class="btn btn-primary" type="submit">Edit</a>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
-                        @endif
                     </tbody>
                 </table>
+                @endif
             </div>
         </div>
     </div>  

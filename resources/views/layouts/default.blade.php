@@ -7,14 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{ $title }}</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="{{ asset('myassets/vendors/mdi/css/materialdesignicons.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('myassets/vendors/css/vendor.bundle.base.css') }}">
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
+    <!-- <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}"> -->
     <link rel="stylesheet" href="{{ asset('myassets/css/style.css') }}">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}" />
@@ -35,7 +34,7 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="{{ asset('myassets/vendors/js/vendor.bundle.base.js') }}"></script>
+    <!-- <script src="{{ asset('myassets/vendors/js/vendor.bundle.base.js') }}"></script> -->
     <!-- endinject -->
     <!-- Plugin js for this page -->
     <script src="{{ asset('myassets/vendors/chart.js/Chart.min.js') }}"></script>
